@@ -46,13 +46,13 @@
     	// You will need to update this query with the city, weather format (Celsius or Fahrenheit) and your OpenWeatherMap ID
 
     	var api_id = "3d1fbb87dedd554a4f940f2687669556";
-		let query = "http://api.openweathermap.org/data/2.5/weather?q=" + location + "&units=" + temp_unit + "&APPID=" + api_id;
+		let query = "https://api.openweathermap.org/data/2.5/weather?q=" + location + "&units=" + temp_unit + "&APPID=" + api_id;
         console.log("Query is :" + query);
 
 
         $.getJSON(query, function(json) {
             console.log(JSON.stringify(json));
-            $("#tempImg").attr('src', 'http://openweathermap.org/img/wn/' + json["weather"][0]["icon"] + '@2x.png');
+            $("#tempImg").attr('src', 'https://openweathermap.org/img/wn/' + json["weather"][0]["icon"] + '@2x.png');
             $("#forecast").css('display', 'block');
             $("#loc").text(json["name"]);
             $("#temp").text(json["main"]["temp"]);
